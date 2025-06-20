@@ -7,7 +7,7 @@ version = "0.1"
 
 dependencies {
     commonMainImplementation(project(":karamel-utils-core"))
-    commonMainImplementation("io.github.adokky", "bitvector-core", libs.versions.bitvector.get())
+    commonMainImplementation("io.github.adokky", "bitvector", libs.versions.bitvector.get())
 }
 
 mavenPublishing {

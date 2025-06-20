@@ -1,6 +1,5 @@
-package io.kodec.struct
+package karamel.utils
 
-import karamel.utils.Bits32
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -18,8 +17,6 @@ class TypeSafeBitsTest {
     @Test
     fun combining_bits() {
         var bits = TestSchema.b1 or TestSchema.b4
-
-        println(bits)
 
         assertTrue(TestSchema.b1 in bits)
         assertFalse(TestSchema.b2 in bits)

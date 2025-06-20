@@ -1,6 +1,5 @@
-package io.kodec.struct
+package karamel.utils
 
-import karamel.utils.Bits32
 import dev.dokky.bitvector.BitVector
 import dev.dokky.bitvector.MutableBitVector
 

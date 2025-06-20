@@ -14,7 +14,6 @@ dependencies {
 
 mavenPublishing {
     pom {
-        name = project.name
         description = "Collection of small platform-agnostic Kotlin utilities"
         inceptionYear = "2025"
     }

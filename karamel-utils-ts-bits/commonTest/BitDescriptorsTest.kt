@@ -1,6 +1,5 @@
-package io.kodec.struct
+package karamel.utils
 
-import karamel.utils.initialCause
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails

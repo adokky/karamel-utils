@@ -1,4 +1,4 @@
 [versions]
-quickMpp = "0.13"
+quickMpp = "0.14"
 equalsTester = "0.11"
 bitvector = "0.9"
