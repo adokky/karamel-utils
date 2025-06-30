@@ -3,7 +3,7 @@ plugins {
     id("io.github.adokky.quick-publish") version libs.versions.quickMpp
 }
 
-version = "0.1"
+version = "0.1.1"
 
 dependencies {
     commonMainImplementation(project(":karamel-utils-core"))
