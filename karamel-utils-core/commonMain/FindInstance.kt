@@ -8,23 +8,23 @@ import kotlin.jvm.JvmName
 import kotlin.reflect.KClass
 
 @Throws(NoSuchElementException::class)
-inline fun <reified T: Any> Iterable<*>.findFirstInstanceOf(): T =
-    findFirstInstanceOfOrNull(T::class) ?: instanceNotFound(T::class)
+inline fun <reified T: Any> Iterable<*>.firstInstanceOf(): T =
+    firstInstanceOfOrNull(T::class) ?: instanceNotFound(T::class)
 
 @Throws(NoSuchElementException::class)
-inline fun <reified T: Any> List<*>.findLastInstanceOf(): T =
-    findLastInstanceOfOrNull(T::class) ?: instanceNotFound(T::class)
+inline fun <reified T: Any> List<*>.lastInstanceOf(): T =
+    lastInstanceOfOrNull(T::class) ?: instanceNotFound(T::class)
 
 @PublishedApi
 internal fun instanceNotFound(clazz: KClass<*>): Nothing {
     throw NoSuchElementException("element of type ${clazz.readableName()} not found")
 }
 
-inline fun <reified T: Any> Iterable<*>.findFirstInstanceOfOrNull(): T? = findFirstInstanceOfOrNull(T::class)
+inline fun <reified T: Any> Iterable<*>.firstInstanceOfOrNull(): T? = firstInstanceOfOrNull(T::class)
 
-inline fun <reified T: Any> List<*>.findLastInstanceOfOrNull(): T? = findLastInstanceOfOrNull(T::class)
+inline fun <reified T: Any> List<*>.lastInstanceOfOrNull(): T? = lastInstanceOfOrNull(T::class)
 
-fun <T: Any> Iterable<*>.findFirstInstanceOfOrNull(clazz: KClass<T>): T? {
+fun <T: Any> Iterable<*>.firstInstanceOfOrNull(clazz: KClass<T>): T? {
     for (element in this) {
         @Suppress("UNCHECKED_CAST")
         if (clazz.isInstance(element)) return element as T
@@ -32,7 +32,7 @@ fun <T: Any> Iterable<*>.findFirstInstanceOfOrNull(clazz: KClass<T>): T? {
     return null
 }
 
-fun <T: Any> List<*>.findLastInstanceOfOrNull(clazz: KClass<T>): T? {
+fun <T: Any> List<*>.lastInstanceOfOrNull(clazz: KClass<T>): T? {
     for (i in indices.reversed()) {
         val element = this[i]
         @Suppress("UNCHECKED_CAST")

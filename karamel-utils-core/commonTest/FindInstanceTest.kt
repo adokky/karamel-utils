@@ -14,49 +14,49 @@ class FindInstanceTest {
 
     @Test
     fun find_by_exact_type() {
-        assertEquals("a", strings.findFirstInstanceOf<String>())
-        assertEquals("c", strings.findLastInstanceOf<String>())
+        assertEquals("a", strings.firstInstanceOf<String>())
+        assertEquals("c", strings.lastInstanceOf<String>())
 
-        assertEquals("a", nullableStrings.findFirstInstanceOf<String>())
-        assertEquals("c", nullableStrings.findLastInstanceOf<String>())
+        assertEquals("a", nullableStrings.firstInstanceOf<String>())
+        assertEquals("c", nullableStrings.lastInstanceOf<String>())
 
-        assertEquals(listOf(1), nullableLists.findFirstInstanceOf<List<Int>>())
-        assertEquals(listOf(3), nullableLists.findLastInstanceOf<List<Int>>())
+        assertEquals(listOf(1), nullableLists.firstInstanceOf<List<Int>>())
+        assertEquals(listOf(3), nullableLists.lastInstanceOf<List<Int>>())
     }
 
     @Test
     fun find_by_super_type() {
-        assertEquals("a", strings.findFirstInstanceOf<CharSequence>())
-        assertEquals("c", strings.findLastInstanceOf<CharSequence>())
+        assertEquals("a", strings.firstInstanceOf<CharSequence>())
+        assertEquals("c", strings.lastInstanceOf<CharSequence>())
 
-        assertEquals("a", nullableStrings.findFirstInstanceOf<CharSequence>())
-        assertEquals("c", nullableStrings.findLastInstanceOf<CharSequence>())
+        assertEquals("a", nullableStrings.firstInstanceOf<CharSequence>())
+        assertEquals("c", nullableStrings.lastInstanceOf<CharSequence>())
 
-        assertEquals(listOf(1), nullableLists.findFirstInstanceOf<Collection<Any>>())
-        assertEquals(listOf(3), nullableLists.findLastInstanceOf<Collection<Any>>())
+        assertEquals(listOf(1), nullableLists.firstInstanceOf<Collection<Any>>())
+        assertEquals(listOf(3), nullableLists.lastInstanceOf<Collection<Any>>())
     }
 
     @Test
     fun should_not_find() {
-        assertFailsWith<NoSuchElementException> { strings.findFirstInstanceOf<Int>() }
-        assertFailsWith<NoSuchElementException> { strings.findLastInstanceOf<Int>() }
+        assertFailsWith<NoSuchElementException> { strings.firstInstanceOf<Int>() }
+        assertFailsWith<NoSuchElementException> { strings.lastInstanceOf<Int>() }
 
-        assertFailsWith<NoSuchElementException> { nullableStrings.findFirstInstanceOf<Int>() }
-        assertFailsWith<NoSuchElementException> { nullableStrings.findLastInstanceOf<Int>() }
+        assertFailsWith<NoSuchElementException> { nullableStrings.firstInstanceOf<Int>() }
+        assertFailsWith<NoSuchElementException> { nullableStrings.lastInstanceOf<Int>() }
 
-        assertFailsWith<NoSuchElementException> { nullableLists.findFirstInstanceOf<Set<Any>>() }
-        assertFailsWith<NoSuchElementException> { nullableLists.findLastInstanceOf<Set<Any>>() }
+        assertFailsWith<NoSuchElementException> { nullableLists.firstInstanceOf<Set<Any>>() }
+        assertFailsWith<NoSuchElementException> { nullableLists.lastInstanceOf<Set<Any>>() }
     }
 
     @Test
     fun should_return_null() {
-        assertNull(strings.findFirstInstanceOfOrNull<Int>())
-        assertNull(strings.findLastInstanceOfOrNull<Int>())
+        assertNull(strings.firstInstanceOfOrNull<Int>())
+        assertNull(strings.lastInstanceOfOrNull<Int>())
 
-        assertNull(nullableStrings.findFirstInstanceOfOrNull<Int>())
-        assertNull(nullableStrings.findLastInstanceOfOrNull<Int>())
+        assertNull(nullableStrings.firstInstanceOfOrNull<Int>())
+        assertNull(nullableStrings.lastInstanceOfOrNull<Int>())
 
-        assertNull(nullableLists.findFirstInstanceOfOrNull<Set<Any>>())
-        assertNull(nullableLists.findLastInstanceOfOrNull<Set<Any>>())
+        assertNull(nullableLists.firstInstanceOfOrNull<Set<Any>>())
+        assertNull(nullableLists.lastInstanceOfOrNull<Set<Any>>())
     }
 }
