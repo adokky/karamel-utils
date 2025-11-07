@@ -1,13 +1,13 @@
 plugins {
-    id("io.github.adokky.quick-mpp") version libs.versions.quickMpp
-    id("io.github.adokky.quick-publish") version libs.versions.quickMpp
+    alias(libs.plugins.quick.mpp)
+    alias(libs.plugins.quick.publish)
 }
 
 version = "0.1.1"
 
 dependencies {
     commonMainImplementation(project(":karamel-utils-core"))
-    commonMainImplementation("io.github.adokky", "bitvector", libs.versions.bitvector.get())
+    commonMainImplementation(libs.bitvector)
 }
 
 mavenPublishing {

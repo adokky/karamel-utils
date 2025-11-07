@@ -2,14 +2,14 @@ import kotlinx.kover.gradle.plugin.dsl.AggregationType
 import kotlinx.kover.gradle.plugin.dsl.CoverageUnit
 
 plugins {
-    id("io.github.adokky.quick-mpp") version libs.versions.quickMpp
-    id("io.github.adokky.quick-publish") version libs.versions.quickMpp
+    alias(libs.plugins.quick.mpp)
+    alias(libs.plugins.quick.publish)
 }
 
-version = "0.1.1"
+version = "0.2.0"
 
 dependencies {
-    commonTestImplementation("io.github.adokky", "equals-tester", libs.versions.equalsTester.get())
+    commonTestImplementation(libs.equalsTester)
 }
 
 mavenPublishing {
