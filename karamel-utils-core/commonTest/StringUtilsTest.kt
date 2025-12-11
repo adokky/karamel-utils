@@ -63,6 +63,7 @@ class StringUtilsTest {
         assertEquals("Zbc", "abc".replaceCharAt(0, 'Z'))
         assertEquals("aZc", "abc".replaceCharAt(1, 'Z'))
         assertEquals("abZ", "abc".replaceCharAt(2, 'Z'))
+        assertEquals("111", "11c".replaceCharAt(2, '1'))
     }
 
     @Test

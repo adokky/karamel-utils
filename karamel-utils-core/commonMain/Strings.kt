@@ -32,7 +32,7 @@ fun String.containsAny(
  * Replaces character at [index] with [newChar].
  */
 fun String.replaceCharAt(index: Int, newChar: Char): String {
-    if (this[0] == newChar) return this
+    if (this[index] == newChar) return this
     return buildString {
         val source = this@replaceCharAt
         append(source, 0, index)
