@@ -1,6 +1,6 @@
 package karamel.utils
 
-import dev.adokky.testEquality
+import dev.adokky.eqtester.testEquality
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -30,7 +30,7 @@ class PairsTest {
 
     @Test
     fun int_pair_auto_test() {
-        testEquality(defaultGroupSize = 2) {
+        testEquality {
             group { IntPair(0, 0) }
             group { IntPair(0, 0xfff) }
             group { IntPair(12345, -12345) }
@@ -67,7 +67,7 @@ class PairsTest {
 
     @Test
     fun short_pair_auto_test() {
-        testEquality(defaultGroupSize = 2) {
+        testEquality {
             group { ShortPair(0, 0) }
             group { ShortPair(0, 0xfff) }
             group { ShortPair(12345, -12345) }

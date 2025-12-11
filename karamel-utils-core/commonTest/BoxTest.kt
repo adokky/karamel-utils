@@ -1,6 +1,6 @@
 package karamel.utils
 
-import dev.adokky.testEquality
+import dev.adokky.eqtester.testEquality
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
