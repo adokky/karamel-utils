@@ -64,13 +64,13 @@ fun <T: Any, V> unsafeReceivedLazy(initializer: T.() -> V): ReadOnlyProperty<T, 
  * val Context.database by receivedLazy { DatabaseBuilder.build(context = this, ...) }
  * ```
  */
-inline fun <T: Any, V> receivedLazy(
+fun <T: Any, V> receivedLazy(
     mode: LazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED,
-    crossinline initializer: T.() -> V,
+    initializer: T.() -> V,
 ): ReadOnlyProperty<T, V> = object : ReadOnlyProperty<T, V> {
     var thisRef: T? = null
 
-    val v by lazy(mode) {
+    private val v by lazy(mode) {
         val thisRef = thisRef!!
         this.thisRef = null
         initializer(thisRef)
